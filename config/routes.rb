@@ -9,6 +9,12 @@ Scavenger::Application.routes.draw do
   # Tutorial
   get 'tutorial' => 'welcome#tutorial'
 
+  # Teams
+  resources :teams
+
+  # Game
+  get 'game' => 'game#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

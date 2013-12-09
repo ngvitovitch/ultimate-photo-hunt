@@ -1,0 +1,21 @@
+<div data-role="page" id="page1">
+    <div data-theme="a" data-role="header">
+        <%= link_to "Add",  new_team_path, :class => "ui-btn-right", :data => { :role => "button", :rel => "dialog", :transition =>  "slideup", :icon => "plus", :iconpos => "left" } %>
+        <%= link_to "Back", root_path, :class => "ui-btn-left", :data => { :role => "button", :icon => "arrow-l", :iconpos => "left" } %>
+        <h3>
+            Teams
+        </h3>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-divider-theme="b" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Teams
+            </li>
+            <% @teams.each do |team| %>
+                <li data-theme="c">
+                    <%= link_to team.name, game_path, :data => { :transition => "slide" } %>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</div>
