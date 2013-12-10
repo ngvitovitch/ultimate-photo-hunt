@@ -1,6 +1,15 @@
 class TeamsController < ApplicationController
+  # choose a team
   def index
   	@teams = Team.all
+  end
+
+  # main page for game
+  def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @team_progress }
+    end
   end
 
   def new
