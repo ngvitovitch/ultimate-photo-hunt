@@ -1,9 +1,13 @@
-class Team < ActiveRecord::Base
-	def change
-		create_table :team do |t|
-			t.name :string
+class Team
+  include MongoMapper::Document
 
-			t.timestamps
-		end
-	end
+  key :name,  String
+  one :game_state
+  many :players
+end
+
+class GameState
+  include MongoMapper::EmbeddedDocument
+
+  key :game_id, BSON::ObjectId
 end

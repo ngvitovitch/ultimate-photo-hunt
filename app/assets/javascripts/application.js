@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require simple-inheritance.min.js
+//= require code-photoswipe-1.0.11.js
 //= require_tree .

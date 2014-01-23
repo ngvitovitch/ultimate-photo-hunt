@@ -1,0 +1,32 @@
+<div data-role="page" id="page1">
+    <div data-theme="a" data-role="header">
+        <a data-role="button" href="#hunt-panel" data-icon="search" data-iconpos="left"
+        class="ui-btn-left" id="hunt-button">
+            Hunt
+        </a>
+        <a data-role="button" href="#team-panel" data-icon="info" data-iconpos="left"
+        class="ui-btn-right" id="map-button">
+            Map
+        </a>
+        <h3> Clue #3 </h3>
+    </div><!-- /header -->
+    <div data-role="content" id="content">
+        <!--img src="https://maps.googleapis.com/maps/api/staticmap?center=Madison, WI&amp;zoom=14&amp;size=288x200&amp;markers=Madison, WI&amp;sensor=false"
+        width="288" height="200"-->
+        <!--div class="m-scooch m-fluid m-scooch-photos">
+            <div class="m-scooch-inner"-->
+        <div id="ps-gallery">
+            <div class="gallery-row">
+                <% @game.target_zones[0].targets.each do |t| %>
+                    <%= content_tag("div", content_tag( "a", tag("img", src: t.image_url ), href: '#'), class: "gallery-item") %>
+                <% end %>            
+            </div>
+        </div>
+    </div><!-- /content -->
+    <div data-role="panel" id="team-panel" data-display="push" data-position="right">
+        <h2> Team Panel </h2>
+    </div><!-- /team-panel -->
+    <div data-role="panel" id="hunt-panel" data-display="push" data-position="left">
+        <h2> Hunt Panel </h2>
+    </div><!-- /hunt-panel -->
+</div><!-- /page1 -->

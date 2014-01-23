@@ -13,7 +13,7 @@
             </li>
             <% @teams.each do |team| %>
                 <li data-theme="c">
-                    <%= link_to team.name, game_path, :data => { :transition => "slide" } %>
+                    <%= link_to team.name, team_path(team), :data => { :transition => "slide" } %>
                 </li>
             <% end %>
         </ul>

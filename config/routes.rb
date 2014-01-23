@@ -7,13 +7,13 @@ Scavenger::Application.routes.draw do
   root 'welcome#index'
 
   # Tutorial
-  get 'tutorial' => 'welcome#tutorial'
+  get 'index', to: 'welcome#index'
+  get 'tutorial', to: 'welcome#tutorial'
 
   # Teams
-  resources :teams
-
-  # Game
-  get 'game' => 'game#index'
+  resources :teams do
+    get 'zone/:id/map', to: 'teams#map', as: :zone_map
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

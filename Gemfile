@@ -6,8 +6,11 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
+# Use native BSON extension
+gem 'bson_ext'
+
 # Use mongodb as the application database
-gem 'mongo_mapper'
+gem 'mongo_mapper', '>= 0.13.0.beta2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

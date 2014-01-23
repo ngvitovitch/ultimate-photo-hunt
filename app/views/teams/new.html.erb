@@ -1,13 +1,17 @@
 <div data-role="page" id="page1">
-    <div data-role="content">
-	    <%= form_for :team, url: teams_path do |f| %>
-	    	<p>
-	    		<%= f.label :name %><br>
-	    		<%= f.text_field :name %>
-	    	</p>
-	    	<p>
-	    		<%= f.submit %>
-	    	</p>
-	  	<% end %>
-    </div><!-- /content -->
+  <div data-role="content">
+    <%= form_for :team, url: teams_path do |f| %>
+  		<div date-role="fieldcontain">
+   			<%= f.label :name %>
+    		<%= f.text_field :name, :placeholder => "i.e. Purple Pandas" %>
+    	</div><!-- /name -->
+    	<div data-role="fieldcontain">
+    		<%= f.label :game_id, 'Join a Game' %>
+    		<%= f.select :game_id, @games.map { |e| [e.name, e._id] } %>
+   		</div><!-- /game-select -->
+   		<div date-role="fieldcontain">
+    		<%= f.submit %>
+   		</div><!-- /submit -->
+		<% end %><!-- /form -->
+  </div><!-- /content -->
 </div>

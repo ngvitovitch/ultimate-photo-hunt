@@ -1,3 +1,25 @@
 // Place all the styles related to the teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thumbnail-ratio{
+  width: 100px;  // change to desired width.
+  height: 100px; // change to desired height.
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.m-item img {
+  width: 100%;
+}
+
+.thumbnail-ratio2{
+    position:relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50% ; /* % of width, defines aspect ratio*/
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;  
+}

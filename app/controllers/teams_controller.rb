@@ -6,23 +6,30 @@ class TeamsController < ApplicationController
 
   # main page for game
   def show
-    respond_to do |format|
-      format.html
-      format.json { render json: @team_progress }
-    end
+    @team = Team.find_by_id(params['id'])
+    @game_state = @team.game_state
+    @game = Game.find_by_id(@game_state.game_id)
+  end
+
+  def map
+    @team = Team.find_by_id(params['team_id'])
+    @game_state = @team.game_state
+    @game = Game.find_by_id(@game_state.game_id)
+    @zone = @game.target_zones.find(params['id'])
   end
 
   def new
-  end
-
+    @games = Game.all
+    end
   def create
-  	@team = Team.new(team_params)
-  	@team.save
-  	redirect_to :back
+    team = Team.new(:name => params['team']['name'])
+    team.build_game_state(:game_id => params['team']['game_id'])
+    team.save
+    redirect_to :back
   end
 
-  private
-  def team_params
-  	params.require(:team).permit(:name)
-  end
+#  private
+#  def team_params
+#  	params.require(:team).permit(:name, :game_id)
+#  end
 end
